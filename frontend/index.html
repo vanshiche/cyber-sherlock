@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSherlock - Cyber Crime Traceback Agent</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Add Cytoscape for graph visualization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"></script>
+    <!-- Add Chart.js for visualizations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CyberSherlock</h1>
+            <p class="tagline">Intelligent Agent for Cyber Crime Traceback</p>
+        </header>
+
+        <main>
+            <div class="dashboard">
+                <div class="analysis-panel">
+                    <h2>Attack Analysis</h2>
+                    <div class="attack-selector">
+                        <label for="attack-scenario">Select Attack Scenario:</label>
+                        <select id="attack-scenario">
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                        <button id="load-scenario">Load Scenario</button>
+                    </div>
+
+                    <div class="scenario-details" id="scenario-details">
+                        <h3>Scenario Details</h3>
+                        <div id="scenario-content">
+                            <p>Please select a scenario to begin.</p>
+                        </div>
+                    </div>
+
+                    <div class="log-analyzer">
+                        <h3>Log Analyzer</h3>
+                        <textarea id="log-input" placeholder="Paste log data here for analysis..."></textarea>
+                        <button id="analyze-logs">Analyze Logs</button>
+                    </div>
+                </div>
+
+                <div class="visualization-panel">
+                    <h2>Attack Visualization</h2>
+                    <div class="graph-container">
+                        <div id="attack-graph"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-panel" id="results-panel">
+                <h2>Analysis Results</h2>
+                <div class="results-content" id="results-content">
+                    <div class="no-results">Run an analysis to see results</div>
+                </div>
+
+                <div class="recommendation-panel" id="recommendation-panel">
+                    <h3>Sherlock's Recommendations</h3>
+                    <div class="recommendation-content" id="recommendation-content">
+                        <div class="no-results">Recommendations will appear here after analysis</div>
+                    </div>
+                </div>
+
+                <div class="prediction-panel">
+                    <h3>Attacker's Next Moves</h3>
+                    <div class="prediction-content" id="prediction-content">
+                        <div class="no-results">Predictions will appear here after analysis</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="simulation-container">
+                <div class="chart-panel">
+                    <h2>Attack Progression</h2>
+                    <div class="chart-container">
+                        <canvas id="attack-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="simulation-panel">
+                    <h2>Attack Simulation</h2>
+                    <div class="simulation-controls">
+                        <button id="start-simulation">Start Simulation</button>
+                        <button id="next-step" disabled>Next Step</button>
+                        <button id="reset-simulation" disabled>Reset</button>
+                    </div>
+                    <div class="simulation-log" id="simulation-log">
+                        <p>Simulation not started</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="modal" id="result-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Analysis Complete</h2>
+                <div class="modal-body" id="modal-body">
+                    <!-- Content will be populated dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>CyberSherlock - Using Game Theory and AI for Cyber Attack Analysis</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
